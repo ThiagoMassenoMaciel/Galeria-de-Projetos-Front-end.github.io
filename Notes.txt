@@ -1,0 +1,125 @@
+RESOLVER REPOSITORIOS NO GIT HUB  
+
+  -projeto -02 DESAFIO fazer 
+  -projeto -04 desafio atualizar
+  -Titulos das paginas html  dos projetos    5 , 6 ,7 era pra ser    4,5,6
+
+Objetivo:
+--> Template como apresentação para os meus projetos.
+
+Versão 1.0 - Basico 
+  -Suporta apenas midias digitais com o tamanho da width no mínimo de 1266px e altura 474px
+
+  -Cores definidas com variaveis css;
+  -Tags semânticas
+
+  header
+  main
+  --section
+  ----figure
+  ------figcaption
+  footer
+
+Haverá próximas Atualizações
+
+
+Aprendizado:
+  Não ter definido o tempo de execução desde projeto 
+  Não ter seguido o que foi planejado
+  Se há problemas deixe que seja resolvida na próxima versão 
+  Não tem problema olhar de novo os códigos de projetos passados
+
+Ponto positivo
+  Apliquei as variaveis de cor no css . Esta característica faz com que seja mais fácil de fazer uma manutenção de design de cores futuramente
+  Utilizei atalho (  aperta e segura na tecla alt +  clicando nas linhas ) e coloquei o target dos links igual a _blank muito mais rapido 
+
+Pontos negativos 
+  Demorei 4h30 para concluir a versão 1.0 
+
+
+
+
+problemas:
+
+
+  ::::::css:::::::este codigo não atribuiu nenhuma cor ao footer
+
+      background-color: var(--var-cor-background-footer);
+
+      pois  n precisava de uma variavel dentro de outra 
+
+      var  cor do header : #código-cor
+      var  cor do footer : (cor do header )
+
+      🚫footer{
+          background-color : cor do footer 
+        }
+
+      ✅footer{
+          background-color: var cor do header
+        }
+
+
+  :::Problema 1 :::html::::::porque o site não fica com o tamanho hight da viewport ?
+      pelo fato do body estar com uma altura predefinida de acordo com os elementos dentro dele
+
+      eu n tinha percebido que havia colocado box-sizing no <body> = content-box
+
+      🚫*, body{
+
+          margin: 0;
+          padding: 0;
+
+          box-sizing: content-box;
+          text-align: center;
+
+          height: auto;
+        }
+
+      ✅*{
+          margin: 0;
+          padding: 0;
+
+          box-sizing: content-box;
+          text-align: center;
+          
+        }
+          ::detalhe
+            pelo seletor universal colocou margin e padding 0 para todas as tags. Mas pelo seu nível de prioridade ser o menor de todos, foi setado apenas para as outras tags que não tiveram estes valores definidos no resto do arquivo css.
+
+        body{
+          margin: 0;
+          padding: 0;
+        }
+
+      
+
+
+
+  :::Problema 2 :::html::::::porque os elementos não estão centralizados quando a width é > 1200 px  ?
+  provavelmente pelo motivo das tags semânticos estarem soltas dentro do body 
+
+  ✅<body>
+      <div class="app">
+        <header class="container">header</header>
+
+        <main >
+          main
+          <div class="container"></div>
+            <section>
+            </section>
+          </div>
+        </main>
+
+        <footer class="container">footer</footer>
+      </div>
+    </body>
+
+
+    ::css
+        .app {   margin: 0 auto;}
+
+
+
+Versão 1.1 Responsivo
+
